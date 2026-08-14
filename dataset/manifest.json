@@ -1,0 +1,32 @@
+{
+  "schema_version": "agent-delivery-dataset/v1",
+  "repository": "weihuaguo270-ops/agent-delivery-sandbox",
+  "base_sha": "306490815fb916a3a980bf144202cda45fc63b3d",
+  "split_policy": "issue-number ranges: dev=1-6, golden=7-16, held-out=17-24",
+  "cases": [
+    {"case_id":"task_01","issue":1,"split":"dev","old":101,"new":111},
+    {"case_id":"task_02","issue":2,"split":"dev","old":102,"new":112},
+    {"case_id":"task_03","issue":3,"split":"dev","old":103,"new":113},
+    {"case_id":"task_04","issue":4,"split":"dev","old":104,"new":114},
+    {"case_id":"task_05","issue":5,"split":"dev","old":105,"new":115},
+    {"case_id":"task_06","issue":6,"split":"dev","old":106,"new":116},
+    {"case_id":"task_07","issue":7,"split":"golden","old":107,"new":117},
+    {"case_id":"task_08","issue":8,"split":"golden","old":108,"new":118},
+    {"case_id":"task_09","issue":9,"split":"golden","old":109,"new":119},
+    {"case_id":"task_10","issue":10,"split":"golden","old":110,"new":120},
+    {"case_id":"task_11","issue":11,"split":"golden","old":111,"new":121},
+    {"case_id":"task_12","issue":12,"split":"golden","old":112,"new":122},
+    {"case_id":"task_13","issue":13,"split":"golden","old":113,"new":123},
+    {"case_id":"task_14","issue":14,"split":"golden","old":114,"new":124},
+    {"case_id":"task_15","issue":15,"split":"golden","old":115,"new":125},
+    {"case_id":"task_16","issue":16,"split":"golden","old":116,"new":126},
+    {"case_id":"task_17","issue":17,"split":"held_out","old":117,"new":127},
+    {"case_id":"task_18","issue":18,"split":"held_out","old":118,"new":128},
+    {"case_id":"task_19","issue":19,"split":"held_out","old":119,"new":129},
+    {"case_id":"task_20","issue":20,"split":"held_out","old":120,"new":130},
+    {"case_id":"task_21","issue":21,"split":"held_out","old":121,"new":131},
+    {"case_id":"task_22","issue":22,"split":"held_out","old":122,"new":132},
+    {"case_id":"task_23","issue":23,"split":"held_out","old":123,"new":133},
+    {"case_id":"task_24","issue":24,"split":"held_out","old":124,"new":134}
+  ]
+}

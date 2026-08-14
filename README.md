@@ -14,4 +14,7 @@
 ```bash
 python -m pytest -q
 ```
+
+冻结数据集见 [`dataset/manifest.json`](dataset/manifest.json)，批量入口为
+[`run_delivery_experiment.py`](run_delivery_experiment.py)。运行产物默认不提交仓库。
 Controlled GitHub sandbox for Agent delivery workflow evidence
