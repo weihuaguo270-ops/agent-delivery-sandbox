@@ -1,7 +1,7 @@
 """Expected business contract for every synthetic policy."""
 
 EXPECTED_LIMITS = {
-    "task_01": 101,
+    "task_01": 111,
     "task_02": 102,
     "task_03": 103,
     "task_04": 104,
