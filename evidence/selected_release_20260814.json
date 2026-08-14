@@ -1,0 +1,32 @@
+{
+  "schema_version": "agent-delivery-selected-release/v1",
+  "selected_case_ids": ["task_01", "task_18"],
+  "excluded": {
+    "task_02": "human_rejected",
+    "task_17": "rolled_back"
+  },
+  "pull_requests": [
+    "https://github.com/weihuaguo270-ops/agent-delivery-sandbox/pull/25",
+    "https://github.com/weihuaguo270-ops/agent-delivery-sandbox/pull/28"
+  ],
+  "metrics": {
+    "cases": 2,
+    "task_success_rate": 1.0,
+    "mean_latency_ms": 7110.01,
+    "p95_latency_ms": 8067.798,
+    "external_write_count": 2,
+    "human_review_coverage": 1.0
+  },
+  "release_gate": {
+    "decision": "pass",
+    "business_state_verified": 2,
+    "held_out_episodes": 1,
+    "failure_gate_present": true,
+    "performance_present": true,
+    "dataset_audit_present": true,
+    "human_review_present": true,
+    "version_comparison_present": false,
+    "artifact_sha256": "de38d9a5210b018bc4aa9a501a794b7cc64b82abb71732ca81f9146b0c00dd81"
+  },
+  "claim_boundary": "Selected external sandbox release; no production traffic or measured human execution baseline."
+}

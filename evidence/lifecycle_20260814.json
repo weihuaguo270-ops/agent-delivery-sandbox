@@ -29,9 +29,10 @@
     {
       "number": 28,
       "case_id": "task_18",
-      "outcome": "pending_review",
-      "state": "open_draft",
-      "url": "https://github.com/weihuaguo270-ops/agent-delivery-sandbox/pull/28"
+      "outcome": "accepted",
+      "state": "merged",
+      "url": "https://github.com/weihuaguo270-ops/agent-delivery-sandbox/pull/28",
+      "merge_commit": "9ad4ca164c56d7eab4d9f292a0c0ec671cdfa3b2"
     },
     {
       "number": 29,

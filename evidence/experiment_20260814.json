@@ -26,12 +26,12 @@
     "artifact_sha256": "858dc3d2306cbd3716b929f8a0d2a88cb0e80a2c95735077f502305db88874bf"
   },
   "human_review": {
-    "reviewed": 3,
+    "reviewed": 4,
     "required": 4,
-    "accepted": 2,
+    "accepted": 3,
     "rejected": 1,
-    "pending": 1,
-    "acceptance_rate_finalized": 0.666667,
+    "pending": 0,
+    "acceptance_rate_finalized": 0.75,
     "intervention_rate": 1.0
   },
   "rollback": {
@@ -47,6 +47,13 @@
       "human review coverage 3/4 below requirement"
     ],
     "artifact_sha256": "fb0a52034a4b5cb52864a459d16a024f6f50d9fd9507e8aff8eac666a7b08753"
+  },
+  "selected_release_gate": {
+    "case_ids": ["task_01", "task_18"],
+    "excluded": {"task_02": "human_rejected", "task_17": "rolled_back"},
+    "decision": "pass",
+    "artifact_sha256": "de38d9a5210b018bc4aa9a501a794b7cc64b82abb71732ca81f9146b0c00dd81",
+    "version_comparison_present": false
   },
   "trace_analysis": {
     "trajectories": 24,
