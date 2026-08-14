@@ -17,7 +17,7 @@ EXPECTED_LIMITS = {
     "task_14": 114,
     "task_15": 115,
     "task_16": 116,
-    "task_17": 127,
+    "task_17": 117,
     "task_18": 118,
     "task_19": 119,
     "task_20": 120,
