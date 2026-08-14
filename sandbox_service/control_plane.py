@@ -45,16 +45,24 @@ def build_handler(
     stream = log_stream or sys.stdout
 
     class Handler(BaseHTTPRequestHandler):
+        """Serve health, evidence and approval endpoints for one configured tenant.
+
+        Health and readiness are intentionally public. Evidence reads and approval
+        writes require the bearer token captured by :func:`build_handler`.
+        """
+
         server_version = "AgentDeliveryControlPlane/0.1"
 
         def log_message(self, format: str, *args: Any) -> None:
             return
 
         def _request_id(self) -> str:
+            """Accept bounded trace IDs and replace malformed input at the boundary."""
             supplied = self.headers.get("X-Request-Id", "")
             return supplied if _REQUEST_ID.fullmatch(supplied) else uuid.uuid4().hex
 
         def _authorized(self) -> bool:
+            """Compare bearer credentials without data-dependent early returns."""
             header = self.headers.get("Authorization", "")
             prefix = "Bearer "
             candidate = header[len(prefix):] if header.startswith(prefix) else ""
@@ -67,6 +75,7 @@ def build_handler(
             status: int,
             started: float,
         ) -> None:
+            """Emit one structured access event after the response is written."""
             event = {
                 "timestamp": _utc_now(),
                 "request_id": request_id,
@@ -86,6 +95,7 @@ def build_handler(
             request_id: str,
             started: float,
         ) -> None:
+            """Send the common JSON envelope and its correlated access event."""
             body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
             self.send_response(status)
             self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -104,6 +114,7 @@ def build_handler(
             )
 
         def do_GET(self) -> None:
+            """Return public liveness/readiness or authenticated run evidence."""
             started = time.perf_counter()
             request_id = self._request_id()
             path = self.path.split("?", 1)[0]
@@ -139,6 +150,12 @@ def build_handler(
             )
 
         def do_POST(self) -> None:
+            """Validate and append an authenticated approval decision.
+
+            The plan hash binds the decision to immutable plan content. The
+            process-local lock prevents JSONL records from interleaving across
+            request threads; cross-process writers require an external store.
+            """
             started = time.perf_counter()
             request_id = self._request_id()
             if not self._authorized():
@@ -195,6 +212,7 @@ def build_handler(
 
 
 def main() -> int:
+    """Run the threaded control plane until interrupted and return zero."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8780)

@@ -17,6 +17,7 @@ from react_agent.apps.github_delivery import (
 
 
 def _task(case: dict, repository: Path) -> DeliveryTask:
+    """Translate one frozen manifest case into an executable delivery task."""
     case_id = case["case_id"]
     old = case["old"]
     new = case["new"]
@@ -50,6 +51,7 @@ def _task(case: dict, repository: Path) -> DeliveryTask:
 
 
 def _percentile(values: list[float], percentile: float) -> float:
+    """Return the nearest-rank sample used by the experiment summary."""
     if not values:
         return 0.0
     ordered = sorted(values)
@@ -58,6 +60,11 @@ def _percentile(values: list[float], percentile: float) -> float:
 
 
 def main() -> int:
+    """Run selected cases and persist per-case plus aggregate evidence.
+
+    The command succeeds when every selected case passes; callers are responsible
+    for selecting a non-empty manifest slice when evidence is required.
+    """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--manifest", type=Path, default=Path("dataset/manifest.json"))
     parser.add_argument("--repository", type=Path, default=Path("."))

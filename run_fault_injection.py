@@ -15,6 +15,7 @@ from react_agent.apps.github_delivery import (
 
 
 def main() -> int:
+    """Inject a contract mismatch and succeed only when tests contain it."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repository", type=Path, default=Path("."))
     parser.add_argument("--artifact-dir", type=Path, required=True)
