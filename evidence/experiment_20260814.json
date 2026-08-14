@@ -1,0 +1,64 @@
+{
+  "schema_version": "agent-delivery-business-evidence/v1",
+  "generated_at": "2026-08-14T04:10:00Z",
+  "dataset": {
+    "issues": 24,
+    "split_counts": {"dev": 6, "golden": 10, "held_out": 8},
+    "base_sha": "306490815fb916a3a980bf144202cda45fc63b3d"
+  },
+  "shadow": {
+    "cases": 24,
+    "passed": 24,
+    "task_success_rate": 1.0,
+    "external_write_count": 0,
+    "mean_latency_ms": 569.04,
+    "p95_latency_ms": 606.258,
+    "artifact_sha256": "1cac00e1f3bbcd1cf3442f0de43c7d689ac33d3eef4f62ab53a1b2f2a7bc7f9f"
+  },
+  "guarded": {
+    "cases": 4,
+    "passed": 4,
+    "draft_pr_created": 4,
+    "external_write_count": 4,
+    "mean_latency_ms": 7302.775,
+    "p95_latency_ms": 8457.034,
+    "model_cost_usd": 0.0,
+    "artifact_sha256": "858dc3d2306cbd3716b929f8a0d2a88cb0e80a2c95735077f502305db88874bf"
+  },
+  "human_review": {
+    "reviewed": 3,
+    "required": 4,
+    "accepted": 2,
+    "rejected": 1,
+    "pending": 1,
+    "acceptance_rate_finalized": 0.666667,
+    "intervention_rate": 1.0
+  },
+  "rollback": {
+    "attempted": 1,
+    "passed": 1,
+    "pull_request": "https://github.com/weihuaguo270-ops/agent-delivery-sandbox/pull/29"
+  },
+  "release_gate": {
+    "decision": "hold",
+    "hard_failures": ["human review rejected cases: ['task_02']"],
+    "review_reasons": [
+      "business version comparison=review",
+      "human review coverage 3/4 below requirement"
+    ],
+    "artifact_sha256": "fb0a52034a4b5cb52864a459d16a024f6f50d9fd9507e8aff8eac666a7b08753"
+  },
+  "trace_analysis": {
+    "trajectories": 24,
+    "detected_failure_distribution": {},
+    "artifact_sha256": "9613e4e0bab567de398e9273cea1940bf64a0c41b9eb7efd4a42be959cbaa3ba",
+    "boundary": "Sandbox project health mechanisms are unobserved; only trajectory scan is evidenced."
+  },
+  "environment_incident": {
+    "affected_runs": 24,
+    "symptom": "Local clone rejected by Git dubious-ownership protection under the restricted runner account.",
+    "resolution": "Rerun under the repository owner account; failed v1 artifacts were preserved."
+  },
+  "evidence_level": "external_real_sandbox",
+  "claim_boundary": "Dedicated public GitHub sandbox with synthetic tasks; no production users or traffic."
+}

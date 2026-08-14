@@ -1,0 +1,45 @@
+{
+  "schema_version": "agent-delivery-pr-lifecycle/v1",
+  "pull_requests": [
+    {
+      "number": 25,
+      "case_id": "task_01",
+      "outcome": "accepted",
+      "state": "merged",
+      "url": "https://github.com/weihuaguo270-ops/agent-delivery-sandbox/pull/25",
+      "merge_commit": "66b8d1e230afdbbf38cc2c053ea1c965a001b3f9"
+    },
+    {
+      "number": 26,
+      "case_id": "task_02",
+      "outcome": "human_rejected",
+      "state": "closed",
+      "branch_deleted": true,
+      "url": "https://github.com/weihuaguo270-ops/agent-delivery-sandbox/pull/26"
+    },
+    {
+      "number": 27,
+      "case_id": "task_17",
+      "outcome": "accepted_then_rolled_back",
+      "state": "merged",
+      "url": "https://github.com/weihuaguo270-ops/agent-delivery-sandbox/pull/27",
+      "merge_commit": "3cf42e714d98dc1f02cf4d1d05346ee7697e7966",
+      "rollback_pr": 29
+    },
+    {
+      "number": 28,
+      "case_id": "task_18",
+      "outcome": "pending_review",
+      "state": "open_draft",
+      "url": "https://github.com/weihuaguo270-ops/agent-delivery-sandbox/pull/28"
+    },
+    {
+      "number": 29,
+      "case_id": "rollback_task_17",
+      "outcome": "rollback_accepted",
+      "state": "merged",
+      "url": "https://github.com/weihuaguo270-ops/agent-delivery-sandbox/pull/29",
+      "merge_commit": "8c1f9983f29006abca55836e50242d9c32182ce1"
+    }
+  ]
+}

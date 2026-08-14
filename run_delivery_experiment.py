@@ -80,7 +80,9 @@ def main() -> int:
     ))
     reports = []
     episode_dir = args.artifact_dir / "episodes"
+    trajectory_dir = args.artifact_dir / "trajectories"
     episode_dir.mkdir(parents=True, exist_ok=True)
+    trajectory_dir.mkdir(parents=True, exist_ok=True)
     for case in selected:
         approval = None
         if args.approval_dir:
@@ -95,6 +97,12 @@ def main() -> int:
         reports.append(report)
         (episode_dir / f"{case['case_id']}.json").write_text(
             json.dumps(report["episode"], ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        (trajectory_dir / f"{case['case_id']}.json").write_text(
+            json.dumps(
+                report["episode"]["trajectory"], ensure_ascii=False, indent=2
+            ) + "\n",
             encoding="utf-8",
         )
 
