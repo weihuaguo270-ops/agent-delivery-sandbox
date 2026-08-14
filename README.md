@@ -11,6 +11,22 @@
 - Draft PR 的合并、拒绝关闭和回滚案例
 - 任务成功率、人工接管率、PR 接受率和 P95 延迟
 
+## 2026-08-14 实验结论
+
+- 数据集 24 条：dev/golden/held-out = 6/10/8；Shadow 24/24，外部写入 0，P95 606.258 ms。
+- guarded 4/4 创建 Draft PR，P95 8457.034 ms；人工接受 3 条、拒绝 1 条。
+- PR #25、#28 合并，PR #26 拒绝并关闭；PR #27 合并后由 PR #29 回滚。当前没有待处理 PR。
+- 选定发布集 task_01 + task_18 的 `llm-eval-engine` 门禁为 `pass`；全量实验保留拒绝案例，门禁为 `hold`。
+- 故障注入在外部写入前被测试拦截，并由 `trace-debugger` 分类为 `acceptance_failed`。
+
+证据等级为 `external_real_sandbox`：GitHub Issue、分支、Draft PR、合并、关闭和回滚操作真实发生，
+任务内容与审批决定属于合成实验。尚无生产用户或流量、人工执行耗时基线、真实模型成本、OAuth
+和多租户权限证据。其余 20 条 Issue 仅完成 Shadow，不应计为受控写入交付。
+
+冻结证据见 [`evidence/experiment_20260814.json`](evidence/experiment_20260814.json)、
+[`evidence/selected_release_20260814.json`](evidence/selected_release_20260814.json) 和
+[`evidence/failure_feedback_20260814.json`](evidence/failure_feedback_20260814.json)。
+
 ```bash
 python -m pytest -q
 ```
@@ -39,4 +55,3 @@ python run_fault_injection.py --artifact-dir ../test-temp/agent-delivery-fault-v
 ```
 
 该用例故意只修改运行策略、不修改业务契约。测试必须失败，运行器必须阻止外部写入，`trace-debugger` 应标记 `acceptance_failed`，`llm-eval-engine` 应给出 `hold`。
-Controlled GitHub sandbox for Agent delivery workflow evidence
