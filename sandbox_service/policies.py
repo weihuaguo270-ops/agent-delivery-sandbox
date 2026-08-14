@@ -1,0 +1,28 @@
+"""Runtime policy limits changed by delivery tasks."""
+
+POLICY_LIMITS = {
+    "task_01": 101,
+    "task_02": 102,
+    "task_03": 103,
+    "task_04": 104,
+    "task_05": 105,
+    "task_06": 106,
+    "task_07": 107,
+    "task_08": 108,
+    "task_09": 109,
+    "task_10": 110,
+    "task_11": 111,
+    "task_12": 112,
+    "task_13": 113,
+    "task_14": 114,
+    "task_15": 115,
+    "task_16": 116,
+    "task_17": 117,
+    "task_18": 118,
+    "task_19": 119,
+    "task_20": 120,
+    "task_21": 121,
+    "task_22": 122,
+    "task_23": 123,
+    "task_24": 124,
+}
