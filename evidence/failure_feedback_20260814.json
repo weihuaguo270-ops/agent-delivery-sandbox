@@ -1,0 +1,20 @@
+{
+  "schema_version": "agent-delivery-failure-feedback/v1",
+  "case_id": "fault-issue-3-contract-mismatch",
+  "runtime": {
+    "status": "test_failed",
+    "external_write_count": 0,
+    "alert": "delivery_failed"
+  },
+  "trace_debugger": {
+    "classification": "acceptance_failed",
+    "needs_fix": true,
+    "release": "https://github.com/weihuaguo270-ops/trace-debugger/releases/tag/v0.5.0",
+    "artifact_sha256": "b77a4d61c65cdb82a16cf5c0d18ee3db71c15d27ba6d1b08954e14fb0c9b6133"
+  },
+  "llm_eval_engine": {
+    "decision": "hold",
+    "reason": "business-state failures",
+    "artifact_sha256": "f3c6d093fab904850d09e71b1eaa691003720e4796dc220e7c7419d96db90b9f"
+  }
+}

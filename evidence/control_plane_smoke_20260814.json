@@ -1,0 +1,20 @@
+{
+  "schema_version": "agent-delivery-control-plane-smoke/v1",
+  "timestamp": "2026-08-14T04:29:41Z",
+  "checks": {
+    "health_status": 200,
+    "missing_token_status": 401,
+    "authorized_evidence_status": 200,
+    "approval_write_status": 201,
+    "request_id_preserved": true,
+    "authorization_logged": false
+  },
+  "latency_ms": {
+    "health": 0.134,
+    "unauthorized": 0.143,
+    "evidence": 0.323,
+    "approval": 0.416
+  },
+  "approval_audit_sha256": "b2b003e0f6d823d9acfa10631b4788a603eeecb8d5d7b15fd4ea5b1e1c77927f",
+  "boundary": "Local live HTTP smoke for a single-tenant sandbox control plane."
+}

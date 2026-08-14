@@ -13,6 +13,8 @@
 | 回滚 | PR #27 合并后由 PR #29 回滚，CI 通过 |
 | trace-debugger | 24 条轨迹扫描，无启发式失败；沙箱项目健康机制未接入 |
 | llm-eval-engine | 基础业务终态门禁通过；综合门禁 `hold` |
+| 故障回流 | 契约不一致被运行器拦截；trace=`acceptance_failed`；release=`hold` |
+| 控制面 | Bearer 鉴权、request_id、JSON 访问日志、审批审计 |
 
 综合门禁保持 `hold` 是预期结果：PR #26 被人工拒绝，PR #28 仍待评审，并且没有测量人工执行基线。不能用脚本结果代替真实人工基线。
 

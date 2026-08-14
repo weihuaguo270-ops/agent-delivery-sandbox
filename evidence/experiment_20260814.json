@@ -59,6 +59,21 @@
     "symptom": "Local clone rejected by Git dubious-ownership protection under the restricted runner account.",
     "resolution": "Rerun under the repository owner account; failed v1 artifacts were preserved."
   },
+  "failure_feedback": {
+    "case_id": "fault-issue-3-contract-mismatch",
+    "runtime_status": "test_failed",
+    "external_write_count": 0,
+    "trace_classification": "acceptance_failed",
+    "release_gate": "hold",
+    "trace_debugger_release": "https://github.com/weihuaguo270-ops/trace-debugger/releases/tag/v0.5.0"
+  },
+  "control_plane": {
+    "bearer_auth": true,
+    "structured_access_logs": true,
+    "request_id": true,
+    "approval_audit": true,
+    "multi_tenant": false
+  },
   "evidence_level": "external_real_sandbox",
   "claim_boundary": "Dedicated public GitHub sandbox with synthetic tasks; no production users or traffic."
 }
