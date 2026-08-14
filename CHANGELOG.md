@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.1 (2026-08-14)
+
+### Evidence
+
+- Final human review completed for PR #28
+- Selected release set `task_01 + task_18` passed business state, performance,
+  dataset audit, human review, and trajectory failure gates
+- Rejected `task_02` and rolled-back `task_17` remain excluded with their evidence preserved
+
 ## 0.1.0 (2026-08-14)
 
 ### Added
