@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.2 (2026-08-20)
+
+### Documentation and control boundaries
+
+- Documented the approval control plane, evidence contracts, fault-feedback path, and
+  the distinction between real GitHub lifecycle operations and synthetic task content.
+- Clarified that a selected release set can pass while the full guarded experiment stays
+  `hold` when rejection or rollback evidence is retained.
+
+### Verified
+
+- Existing sandbox regression remains green; no production or multi-tenant claims are made.
+
 ## 0.1.1 (2026-08-14)
 
 ### Evidence

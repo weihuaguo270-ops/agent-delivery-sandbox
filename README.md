@@ -23,6 +23,9 @@
 任务内容与审批决定属于合成实验。尚无生产用户或流量、人工执行耗时基线、真实模型成本、OAuth
 和多租户权限证据。其余 20 条 Issue 仅完成 Shadow，不应计为受控写入交付。
 
+**2026-08-20 文档更新：** 控制面、证据契约和故障回流边界已集中说明；selected release
+可以为 `pass`，但保留拒绝/回滚的全量 guarded 实验仍应为 `hold`，两者不能合并为一个总分。
+
 冻结证据见 [`evidence/experiment_20260814.json`](evidence/experiment_20260814.json)、
 [`evidence/selected_release_20260814.json`](evidence/selected_release_20260814.json) 和
 [`evidence/failure_feedback_20260814.json`](evidence/failure_feedback_20260814.json)。
